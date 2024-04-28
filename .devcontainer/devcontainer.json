@@ -1,0 +1,38 @@
+{
+	"name": "Koreader",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"USERNAME": "kasm-user"
+		}
+	},
+	"remoteEnv": {
+		"EDITOR": "code --wait"
+	},
+	"runArgs": [
+		"--userns=keep-id" // Comment this if use in docker
+	],
+	"overrideCommand": false,
+	"remoteUser": "kasm-user",
+	"forwardPorts": [
+		3000
+	],
+	"portsAttributes": {
+		"3000": {
+			"label": "desktop"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"sumneko.lua"
+			],
+			"settings": {
+				"workspace.library": [
+					"/home/vscode/.luarocks"
+				]
+			}
+		}
+	}
+}
