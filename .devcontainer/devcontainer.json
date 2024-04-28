@@ -9,9 +9,9 @@
 	"remoteEnv": {
 		"EDITOR": "code --wait"
 	},
-	"runArgs": [
-		"--userns=keep-id" // Comment this if use in docker
-	],
+	// "runArgs": [
+	// 	"--userns=keep-id" // Uncomment this if using Podman
+	// ],
 	"overrideCommand": false,
 	"remoteUser": "kasm-user",
 	"forwardPorts": [
